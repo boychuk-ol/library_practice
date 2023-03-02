@@ -1,11 +1,15 @@
 {
   "ExpandedNodes": [
     "",
+    "\\app",
     "\\app\\Http",
     "\\app\\Http\\Controllers",
     "\\app\\Models",
-    "\\database\\seeders"
+    "\\database",
+    "\\database\\migrations",
+    "\\database\\seeders",
+    "\\public"
   ],
-  "SelectedNode": "\\composer.json",
+  "SelectedNode": "\\public\\Books.csv",
   "PreviewInSolutionExplorer": false
 }
