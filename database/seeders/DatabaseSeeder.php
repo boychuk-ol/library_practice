@@ -17,17 +17,23 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
 
-         $user = User::updateOrCreate([
+        $user = User::firstOrCreate([
+             'name' => RolesEnum::ADMIN->value,
+             'email' => RolesEnum::ADMIN->value.'@gmail.com',
+        ],
+        [
              'name' => RolesEnum::ADMIN->value,
              'email' => RolesEnum::ADMIN->value.'@gmail.com',
              'password' => Hash::make(RolesEnum::ADMIN->value)
          ]);
 
-         Bouncer::assign(RolesEnum::ADMIN->value)->to($user);
+        Bouncer::assign(RolesEnum::ADMIN->value)->to($user);
+        
 
         $this->call([
             GenreSeeder::class,
             AuthorSeeder::class,
+            BookSeeder::class
         ]);
 
     }
